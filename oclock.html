@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>clock-app</title>
+  <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+  <div class="her">
+    <div class="cntin">
+      <div class="clock">
+         <span id="hr">00</span>
+         <span>:</span>
+         <span id="mn">00</span>
+         <span>:</span>
+         <span id="sco">00</span>
+      </div>
+    </div>
+  </div>
+  <script>
+    let hrs = document.getElementById('hr');
+    let min = document.getElementById('mn');
+    let sec = document.getElementById('sco');
+    // to UPDATE EVERY SEC. ass setInterval(() => {}, 1000);
+    //asynchronous code
+     setInterval( function() {
+      const currentTime = new Date();
+          hrs.innerHTML =currentTime.getHours();
+          min.innerHTML =(currentTime.getHours()<10?'0':'' ) + currentTime.getHours();
+          sec.innerHTML =(currentTime.getSeconds()<10?'0':'' ) + currentTime.getSeconds();
+     }, 1000);
+
+//synchronous code
+     setTimeout(() => {
+      console.log('timeout');
+      console.log('second time');
+     }, 4000);
+
+     console.log('jalqaba');
+    
+     
+
+  </script>
+</body>
+</html>
